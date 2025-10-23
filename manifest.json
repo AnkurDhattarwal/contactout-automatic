@@ -1,0 +1,16 @@
+{
+  "name": "Email Scraper + Firestore",
+  "description": "Signin, click 'View email', scrape emails and append them to Firestore under users/<your-email>/pendingMails.",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Email Scraper"
+  },
+  "permissions": [
+    "scripting",
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": ["<all_urls>"]
+}
