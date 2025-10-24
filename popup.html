@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Email Scraper</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Email Scraper</h1>
+
+  <div id="authWrap">
+    <input id="email" type="email" placeholder="your@email.com" />
+    <input id="password" type="password" placeholder="password" />
+    <div class="row">
+      <button id="signupBtn">Sign up</button>
+      <button id="signinBtn">Sign in</button>
+      <button id="logoutBtn">Logout</button>
+    </div>
+    <div id="authStatus" class="small">Not signed in.</div>
+  </div>
+
+  <hr />
+
+  <div id="filters">
+    <h3>Titles (at least one)</h3>
+    <div id="titlesList"></div>
+    <div style="display:flex; gap:8px; margin-top:8px;">
+      <input id="newTitle" placeholder="New title" style="flex:1" />
+      <button id="addTitleBtn">Add</button>
+    </div>
+
+    <div style="margin-top:12px;">
+      <label>Location (fixed): <strong>India</strong></label>
+    </div>
+
+    <div style="margin-top:8px;">
+      <label>Company (required)</label>
+      <input id="company" placeholder="e.g. Google" />
+    </div>
+
+    <div style="margin-top:8px; display:flex; gap:8px;">
+      <div style="flex:1">
+        <label>Page from</label>
+        <input id="pageFrom" type="number" value="1" min="1" />
+      </div>
+      <div style="flex:1">
+        <label>Page to</label>
+        <input id="pageTo" type="number" value="2147483647" min="1" />
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:12px; display:flex; gap:8px;">
+    <button id="startBtn" disabled>Start</button>
+    <button id="stopBtn" disabled>Stop</button>
+  </div>
+
+  <div id="progressWrap" style="margin-top:10px;">
+    <div id="progressBar"></div>
+  </div>
+
+  <div class="small" id="infoRow" style="margin-top:8px;">
+    <div id="phase">Idle</div>
+    <div id="counts">Stored: 0</div>
+  </div>
+
+  <!-- Firebase compat SDKs (local copies you downloaded) -->
+  <script src="firebase-app-compat.js"></script>
+  <script src="firebase-auth-compat.js"></script>
+  <script src="firebase-firestore-compat.js"></script>
+
+  <script src="popup.js"></script>
+</body>
+</html>
